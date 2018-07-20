@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="description" content="Search Food">
+        <meta name="description" content="Search Food - Delivery">
         <meta name="author" content="Danilo Gonçalves dos Santos">
         <title>Search Food - Delivery</title>
 
@@ -37,7 +37,7 @@
                     </h2><!--/Logo-->
                     <nav class="nav nav-masthead justify-content-center pr-5 mr-5">
                         <a class="nav-link active" href="index.php">Home</a>
-                        <a class="nav-link" href="restaurante/plano.php">Cadastrar Restaurante</a>
+                        <a class="nav-link" href="restaurante/cadastro.php">Cadastrar Restaurante</a>
                         <a class="nav-link" href="contato.php">Contato</a>
                         <a class="nav-link" href="#">Entrar ou Cadastrar</a>
                     </nav>
@@ -47,6 +47,8 @@
             <main style="margin-bottom: 8%;margin-top: 10%;" role="main" class="cover mx-auto">
                 <h1 style="font-size: 50px;color: white">O seu novo jeito de pedir comida!</h1> 
                 <div id="div-cep" style="background-color: rgba(0,0,0,0.700);border: thin solid white;display: block;margin-bottom: 50px" class="card mt-4">
+                    
+                </div>
             </main><!--/Main-->
         </div><!--/Cover Container-->
     </body>
