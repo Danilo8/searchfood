@@ -14,21 +14,28 @@
         <!--CSS.min File-->
         <link rel="stylesheet" href="../css/style-cover.min.css">
         <link rel="stylesheet" href="../css/form.min.css">
+        <link rel="stylesheet" href="../css/step-progressbar.min.css">
+        <link rel="stylesheet" href="../css/button.min.css">
 
         <!--Font file-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Jquery and Bootstrap Script files-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     </head>
     <style>
         /*
         * Código CSS para estilização da página
         * Definindo um Background para a tela
         */
-        #topo{background:url(../img/background/) no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        #banner{background:url(../img/background/) no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
-    <body class="text-center" style="font-family: 'Roboto', sans-serif;">
+    <body style="font-family: 'Roboto', sans-serif;">
         <!--Cover Container-->
         <div class="cover-container d-flex w-100  mx-0 flex-column">
             <!--Header-->
@@ -48,7 +55,7 @@
                 </div>
             </header><!--/Header-->
             
-            <div id="topo" class="container-fluid p-0">
+            <div id="banner" class="container-fluid p-0">
                 <div style="background-color: rgba(0,0,0,0.700);">
                     <div  class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
                         <span style="font-size: 40px;color: white">
@@ -59,9 +66,124 @@
                 </div>
             </div>
 
-            <div class="container">
-                
+            <div id="topo" class="container mt-5 text-center">
+                <h2 style="margin-bottom: 50px" class="text-center">Complete todos os passos para fazer parte do Search Food:</h2>
+                <ol class="progtrckr" data-progtrckr-steps="4">
+                    <li style="cursor: pointer;" id="step1" class="progtrckr-done">Dados do Proprietario</li>
+                    <li style="cursor: pointer;" id="step2" class="progtrckr-todo">Dados do Restaurante</li>
+                    <li style="cursor: pointer;" id="step3" class="progtrckr-todo">Dados da Conta</li>
+                    <li style="cursor: pointer;" id="step4" class="progtrckr-todo">Quase lá</li>
+                </ol>
             </div>
+
+            <form action="cadastro.php" method="post" style="margin-top: 100px;margin-bottom: 100px;margin-right: 28%;margin-left: 28%;">
+                <div class="text-center">
+                    <span class="text-muted mt-5">Todos os campos são obrigatorios!</span>
+                </div>
+                <div style="display: block;" id="proprietario">
+                    <h3 class="mt-3 mb-5 text-center">Dados do Proprietario</h3>
+                    <div class="form-group">
+                        <label for="proprietario">Nome do Proprietario:</label>
+                        <input type="text" class="form-control" name="proprietario" id="proprietario" placeholder="Nome do Proprietarrio">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_proprietario">Email:</label>
+                        <input type="email" class="form-control" name="email_proprietario" id="email_proprietario" placeholder="Email pessoal para contato">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do Proprietario" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone_proprietario">Celular:</label>
+                        <input type="text" class="form-control" name="telefone_proprietario" id="telefone_proprietario" placeholder="Celular pessoal para contato" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block">Continuar</button>
+                    </div>
+                </div>
+                <div style="display: none;" id="restaurante">
+                    <h3 class="mt-3 mb-5 text-center">Dados do Restaurante</h3>
+                    <div class="form-group">
+                        <label for="nome_restaurante">Nome do Restaurante:</label>
+                        <input type="text" class="form-control" name="nome_restaurante" id="nome_restaurante" placeholder="Nome do Restaurante">
+                    </div>
+                    <div class="form-group">
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="CNPJ" maxlength="18">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone_restaurante">Telefone do Restaurante:</label>
+                        <input type="text" class="form-control" name="telefone_restaurante" id="telefone_restaurante" placeholder="Telefone do Restaurante" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="endereco">Endereço:</label>
+                                <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço do Restaurante">
+                            </div>
+                            <div class="col-3">
+                                <label for="numero">Nº:</label>
+                                <input type="text" class="form-control" name="numero" id="numero" placeholder="Nº">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="estado">Estado:</label>
+                                <select name="estado" id="estado" class="form-control custom-select">
+
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="cidade">Cidade:</label>
+                                <select name="cidade" id="cidade" class="form-control custom-select">
+
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <label for="cep">CEP:</label>
+                                <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block mt-4">Continuar</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block">Voltar</button>
+                    </div>
+                </div>
+                <div style="display: none;" id="conta">
+                    <h3 class="mt-3 mb-5 text-center">Dados da Conta</h3>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email de acesso">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirma_senha">Confirme a Senha:</label>
+                        <input type="password" class="form-control" name="confirma_senha" id="confirma_senha" placeholder="Confirme a Senha">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block mt-4">Continuar</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block">Voltar</button>
+                    </div>
+                </div>
+            </form>
         </div><!--/Cover Container-->
+
+        <!--JS files-->
+        <script type="text/javascript">$(document).ready(function(){$.getJSON("../js/estados_cidades.json",function(o){var t='<option value="">Estado</option>';$.each(o,function(o,n){t+='<option value="'+n.sigla+'">'+n.sigla+"</option>"}),$("#estado").html(t),$("#estado").change(function(){var t="",n="";$("#estado option:selected").each(function(){n+=$(this).text()}),$.each(o,function(o,a){a.sigla==n&&$.each(a.cidades,function(o,n){t+='<option value="'+n+'">'+n+"</option>"})}),$("#cidade").html(t)}).change()})});</script>
     </body>
 </html>
