@@ -53,7 +53,7 @@
                     <nav class="nav nav-masthead justify-content-center pr-5 mr-5">
                         <a class="nav-link" href="../index.php">Home</a>
                         <a class="nav-link active" href="restaurante/cadastro.php">Cadastrar Restaurante</a>
-                        <a class="nav-link" href="contato.php">Contato</a>
+                        <a class="nav-link" href="../contato.php">Contato</a>
                         <a class="nav-link" href="#">Entrar ou Cadastrar</a>
                     </nav>
                 </div>
@@ -194,7 +194,7 @@
                                 <button class="btn btn-primary">
                                     <i style="font-size: 20px" class="fa fa-cloud-upload"></i>
                                     Escolha uma Imagem
-                                    <input type="file" id="imgInp" name="foto_item">
+                                    <input type="file" id="imgInp" name="foto_capa">
                                 </button>
                             </span>
                         </div>
