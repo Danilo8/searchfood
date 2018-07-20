@@ -184,7 +184,7 @@
                         <button type="button" id="button" class="btn-block">Voltar</button>
                     </div>
                 </div>
-                <div id="persolizacao">
+                <div style="display: none;" id="persolizacao">
                     <h3 class="mt-3 mb-5 text-center">Quase lá</h3>
                     <div style="margin-left: 20%" class="form-group col-7">
                         <label for="imgInp">Foto de Capa</label>
