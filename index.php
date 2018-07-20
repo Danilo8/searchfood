@@ -43,6 +43,11 @@
                     </nav>
                 </div>
             </header><!--/Header-->
+            <!--Main-->
+            <main style="margin-bottom: 8%;margin-top: 10%;" role="main" class="cover mx-auto">
+                <h1 style="font-size: 50px;color: white">O seu novo jeito de pedir comida!</h1> 
+                <div id="div-cep" style="background-color: rgba(0,0,0,0.700);border: thin solid white;display: block;margin-bottom: 50px" class="card mt-4">
+            </main><!--/Main-->
         </div><!--/Cover Container-->
     </body>
 </html>
