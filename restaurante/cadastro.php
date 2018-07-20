@@ -34,6 +34,10 @@
         * Definindo um Background para a tela
         */
         #banner{background:url(../img/background/) no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        /*
+        * Definindo estilo para input file
+        */
+        .btn-file{position:relative;overflow:hidden}.btn-file input[type=file]{position:absolute;top:0;right:0;min-width:100%;min-height:100%;font-size:100px;text-align:right;filter:alpha(opacity=0);opacity:0;outline:0;background:#fff;cursor:inherit;display:block}#img-upload{width:100%}
     </style>
     <body style="font-family: 'Roboto', sans-serif;">
         <!--Cover Container-->
@@ -76,7 +80,7 @@
                 </ol>
             </div>
 
-            <form action="cadastro.php" method="post" style="margin-top: 100px;margin-bottom: 100px;margin-right: 28%;margin-left: 28%;">
+            <form id="cadastro_restaurante" action="cadastro.php" method="post" style="margin-top: 100px;margin-bottom: 100px;margin-right: 28%;margin-left: 28%;">
                 <div class="text-center">
                     <span class="text-muted mt-5">Todos os campos são obrigatorios!</span>
                 </div>
@@ -180,10 +184,39 @@
                         <button type="button" id="button" class="btn-block">Voltar</button>
                     </div>
                 </div>
+                <div id="persolizacao">
+                    <h3 class="mt-3 mb-5 text-center">Quase lá</h3>
+                    <div style="margin-left: 20%" class="form-group col-7">
+                        <label for="imgInp">Foto de Capa</label>
+                        <img class="img-fluid" id='img-upload'/>
+                        <div class="input-group">
+                            <span class="btn btn-default btn-file btn-block">
+                                <button class="btn btn-primary">
+                                    <i style="font-size: 20px" class="fa fa-cloud-upload"></i>
+                                    Escolha uma Imagem
+                                    <input type="file" id="imgInp" name="foto_item">
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="tipo_cozinha">Tipo de Cozinha:</label>
+                        <select name="tipo_cozinha" id="tipo_cozinha" class="form-control custom-select">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block mt-4">Cadastrar</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="button" class="btn-block">Voltar</button>
+                    </div>
+                </div>
             </form>
         </div><!--/Cover Container-->
 
         <!--JS files-->
         <script type="text/javascript">$(document).ready(function(){$.getJSON("../js/estados_cidades.json",function(o){var t='<option value="">Estado</option>';$.each(o,function(o,n){t+='<option value="'+n.sigla+'">'+n.sigla+"</option>"}),$("#estado").html(t),$("#estado").change(function(){var t="",n="";$("#estado option:selected").each(function(){n+=$(this).text()}),$.each(o,function(o,a){a.sigla==n&&$.each(a.cidades,function(o,n){t+='<option value="'+n+'">'+n+"</option>"})}),$("#cidade").html(t)}).change()})});</script>
+        <script type="text/javascript">$(document).ready(function(){function e(e){if(e.files&&e.files[0]){var n=new FileReader;n.onload=function(e){$("#img-upload").attr("src",e.target.result)},n.readAsDataURL(e.files[0])}}$(document).on("change",".btn-file :file",function(){var e=$(this),n=e.val().replace(/\\/g,"/").replace(/.*\//,"");e.trigger("fileselect",[n])}),$(".btn-file :file").on("fileselect",function(e,n){var t=$(this).parents(".input-group").find(":text"),i=n;t.length&&t.val(i)}),$("#imgInp").change(function(){e(this)})});</script>
     </body>
 </html>
