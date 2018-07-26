@@ -9,7 +9,7 @@
     ol.progtrckr li {
         display: inline-block;
         text-align: center;
-        line-height: 3.9em;
+        line-height: 4em;
     }
 
     ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
@@ -35,7 +35,7 @@
     }
     ol.progtrckr li:before {
         position: relative;
-        bottom: -2.5em;
+        bottom: -3em;
         float: left;
         left: 50%;
         line-height: 1em;
@@ -44,11 +44,11 @@
         content: "\2713";
         color: white;
         background-color: #d20911;
-        height: 3em;
-        width: 3em;
-        line-height: 3em;
+        height: 2.5em;
+        width: 2.5em;
+        line-height: 2.5em;
         border: none;
-        border-radius: 3em;
+        border-radius: 2.5em;
     }
     ol.progtrckr li.progtrckr-todo:before {
         content: "\039F";

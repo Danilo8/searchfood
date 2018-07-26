@@ -16,8 +16,8 @@
         <!--CSS.min File-->
         <link rel="stylesheet" href="../css/style-cover.min.css">
         <link rel="stylesheet" href="../css/form.min.css">
-        <link rel="stylesheet" href="../css/step-progressbar.min.css">
-        <link rel="stylesheet" href="../css/button.css">
+        <link rel="stylesheet" href="../css/step-progressbar.css">
+        <link rel="stylesheet" href="../css/button.min.css">
 
         <!--Font file-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -93,7 +93,7 @@
                 <div class="text-center">
                     <span class="text-muted mt-5">Todos os campos são obrigatorios!</span>
                 </div>
-                <div style="display: block;" id="dados_proprietario">
+                <div style="display: none;" id="dados_proprietario">
                     <h3 class="mt-3 mb-5 text-center">Dados do Proprietario</h3>
                     <div class="form-group">
                         <label for="proprietario">Nome do Proprietario:</label>
@@ -121,19 +121,22 @@
                         </button>
                     </div>
                 </div>
-                <div style="display: none;" id="restaurante">
+                <div style="display: block;" id="restaurante">
                     <h3 class="mt-3 mb-5 text-center">Dados do Restaurante</h3>
                     <div class="form-group">
                         <label for="nome_restaurante">Nome do Restaurante:</label>
                         <input type="text" class="form-control" name="nome_restaurante" id="nome_restaurante" placeholder="Nome do Restaurante">
+                        <span style="font-size: 15px" id="nome_restaurante_valido"></span>
                     </div>
                     <div class="form-group">
                         <label for="cnpj">CNPJ:</label>
                         <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="CNPJ" maxlength="18">
+                        <span style="font-size: 15px" id="cnpj_valido"></span>
                     </div>
                     <div class="form-group">
                         <label for="telefone_restaurante">Telefone do Restaurante:</label>
                         <input type="text" class="form-control" name="telefone_restaurante" id="telefone_restaurante" placeholder="Telefone do Restaurante" maxlength="14">
+                        <span style="font-size: 15px" id="telefone_restaurante_valido"></span>
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -172,7 +175,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="button" id="button" class="btn-block mt-4">Continuar</button>
+                        <button style="cursor: not-allowed" type="button" id="button" class="btn-block mt-4 disabled">Continuar</button>
                     </div>
                     <div class="form-group">
                         <button type="button" id="button" class="btn-block vtr1">Voltar</button>
