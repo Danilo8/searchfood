@@ -7,9 +7,12 @@
         <meta name="description" content="Search Food - Delivery">
         <meta name="author" content="Danilo Gonçalves dos Santos">
         <title>Search Food - Delivery</title>
+        <!--Icon-->
+        <link rel="shortcut icon" href="img/icon/icon.ico" />
 
         <!--cdn Bootstrap CSS File-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.css">
 
         <!--CSS.min File-->
         <link rel="stylesheet" href="css/style-cover.min.css">
